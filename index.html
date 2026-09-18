@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="es" class="h-full bg-slate-950 text-slate-100">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Primary Meta Tags -->
+  <title>Kenia Dev | Creadora de StudyQuest - Hub Gamificado & Servicios Dev</title>
+  <meta name="title" content="Kenia Dev | Creadora de StudyQuest - Hub Gamificado & Servicios Dev">
+  <meta name="description" content="Perfil profesional y hub gamificado de Kenia Dev, creadora de StudyQuest. Explora proyectos EdTech, mentorías de UI/UX, plantillas y recursos para estudiantes y marcas.">
+  <meta name="keywords" content="Kenia Dev, StudyQuest, EdTech, UI UX Gamificado, Mentoría Web, Plantillas Notion, Gamificación Educativa">
+  <meta name="author" content="Kenia Dev">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://studyquest.app/keniadev">
+
+  <!-- Open Graph / Facebook / LinkedIn -->
+  <meta property="og:type" content="profile">
+  <meta property="og:url" content="https://studyquest.app/keniadev">
+  <meta property="og:title" content="Kenia Dev | Creadora de StudyQuest & Developer">
+  <meta property="og:description" content="Descubre el mundo de StudyQuest: tareas universitarias transformadas en misiones RPG, mentorías dev y recursos educativos.">
+  <meta property="og:image" content="https://studyquest.app/og-image.jpg">
+
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Kenia Dev | Creadora de StudyQuest">
+  <meta name="twitter:description" content="Hub gamificado de enlaces, mentorías en UI/UX y desarrollo EdTech por Kenia Dev.">
+  <meta name="twitter:image" content="https://studyquest.app/og-image.jpg">
+
+  <!-- Schema.org JSON-LD Structured Data for Search Engines -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ProfilePage",
+        "@id": "https://studyquest.app/keniadev/#webpage",
+        "url": "https://studyquest.app/keniadev",
+        "name": "Perfil Gamificado de Kenia Dev",
+        "description": "Hub de enlaces y catálogo de servicios de Kenia Dev, creadora de StudyQuest.",
+        "inLanguage": "es"
+      },
+      {
+        "@type": "Person",
+        "@id": "https://studyquest.app/keniadev/#author",
+        "name": "Kenia Dev",
+        "jobTitle": "Lead Developer & UI/UX Designer",
+        "knowsAbout": ["EdTech", "Gamification", "Frontend Development", "UI/UX Design"],
+        "sameAs": [
+          "https://github.com",
+          "https://youtube.com",
+          "https://instagram.com",
+          "https://linkedin.com"
+        ]
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "StudyQuest App",
+        "operatingSystem": "Web Browser",
+        "applicationCategory": "EducationalApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- Estilos Personalizados -->
+  <link rel="stylesheet" href="styles.css">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            quest: {
+              bg: '#0b0f19',
+              card: '#151b2e',
+              border: '#27314d',
+              accent: '#6366f1',
+              pink: '#ec4899',
+              gold: '#f59e0b',
+              glow: '#3b82f6'
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="h-full flex flex-col items-center justify-start p-2 sm:p-6 antialiased selection:bg-indigo-500 selection:text-white">
+
+  <!-- ENLACE DE ACCESIBILIDAD PARA SALTAR DIRECTO AL CONTENIDO -->
+  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+  <!-- ENCABEZADO SUPERIOR / BARRA DE HERRAMIENTAS Y MODO -->
+  <header class="w-full max-w-xl mb-4 bg-slate-900/90 border border-slate-800 rounded-2xl p-3 backdrop-blur-md flex flex-col sm:flex-row items-center justify-between gap-3 shadow-lg text-xs" role="banner">
+    <div class="flex items-center space-x-2">
+      <span class="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-600/20 text-indigo-400 font-bold border border-indigo-500/30" aria-hidden="true">
+        <i data-lucide="shield-check" class="w-4 h-4 text-indigo-400"></i>
+      </span>
+      <div>
+        <h1 class="font-bold text-slate-100 text-sm leading-tight">Kenia Dev — Hub Gamificado & Accesible</h1>
+        <p class="text-[11px] text-slate-400">Optimizada para Lectores de Pantalla y SEO</p>
+      </div>
+    </div>
+
+    <div class="flex items-center gap-1.5 w-full sm:w-auto justify-end">
+      <button id="btnViewApp" onclick="switchMainView('preview')" aria-pressed="true" class="px-3 py-1.5 rounded-lg bg-indigo-600 text-white font-medium hover:bg-indigo-500 transition flex items-center gap-1">
+        <i data-lucide="eye" class="w-3.5 h-3.5" aria-hidden="true"></i>
+        <span>Vista Previa</span>
+      </button>
+
+      <button id="btnViewCode" onclick="switchMainView('code')" aria-pressed="false" class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 font-medium hover:bg-slate-700 border border-slate-700 transition flex items-center gap-1">
+        <i data-lucide="code-2" class="w-3.5 h-3.5 text-amber-400" aria-hidden="true"></i>
+        <span>Ver Código</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- CONTENEDOR PRINCIPAL VISTA EN VIVO -->
+  <div id="previewContainer" class="w-full max-w-md transition-all duration-300">
+    
+    <!-- BARRA DE INFORMACIÓN DE EFICIENCIA UX Y SEO -->
+    <aside class="w-full mb-3 bg-indigo-950/40 border border-indigo-500/20 rounded-xl p-2.5 flex items-center justify-between text-xs text-indigo-200" aria-label="Información de accesibilidad">
+      <div class="flex items-center gap-1.5">
+        <i data-lucide="accessibility" class="w-4 h-4 text-emerald-400" aria-hidden="true"></i>
+        <span>Accesibilidad A11y:</span>
+      </div>
+      <div class="font-semibold text-emerald-400 flex items-center gap-1">
+        <span class="bg-emerald-500/10 border border-emerald-500/30 px-2.5 py-0.5 rounded-full text-[11px]">
+          ♿ Compatible con Screen Reader & SEO
+        </span>
+      </div>
+    </aside>
+
+    <!-- MOCKUP MÓVIL PRINCIPAL CON LANDMARKS SEMÁNTICOS -->
+    <main id="main-content" class="w-full bg-quest-bg border border-slate-800 rounded-[2.5rem] shadow-2xl overflow-hidden flex flex-col relative min-h-[780px] transition-all duration-300 mb-8" tabindex="-1">
+      
+      <!-- BARRA DE ESTADO SIMULADA -->
+      <div class="w-full px-6 pt-3 pb-1 flex items-center justify-between text-[11px] text-slate-400 select-none z-20" aria-hidden="true">
+        <span class="font-semibold text-slate-300">09:41</span>
+        <div class="w-20 h-4 bg-slate-900 rounded-full mx-auto -mt-1 flex items-center justify-center">
+          <div class="w-2.5 h-2.5 rounded-full bg-slate-950 border border-slate-800"></div>
+        </div>
+        <div class="flex items-center gap-1.5">
+          <i data-lucide="signal" class="w-3 h-3"></i>
+          <i data-lucide="wifi" class="w-3 h-3"></i>
+          <i data-lucide="battery" class="w-3.5 h-3.5"></i>
+        </div>
+      </div>
+
+      <!-- BANNER MODO BLUEPRINT ALTO CONTRASTE -->
+      <div id="wfBanner" class="hidden bg-amber-500/10 border-b border-amber-500/30 px-4 py-1.5 text-[11px] text-amber-800 font-mono flex justify-between items-center" aria-live="polite">
+        <span>📐 MODO BLUEPRINT (Alto Contraste)</span>
+        <button onclick="toggleMode()" class="underline font-bold">Volver a Color</button>
+      </div>
+
+      <div class="flex-1 overflow-y-auto px-4 pt-2 pb-24 space-y-4">
+
+        <!-- 1. SECCIÓN: TARJETA DE PERFIL Y GAMIFICACIÓN -->
+        <section class="rpg-card rounded-2xl p-4" aria-labelledby="profile-heading">
+          <div class="flex items-start justify-between mb-3">
+            <div class="flex items-center gap-3">
+              <button onclick="gainXp(50)" class="relative group text-left rounded-2xl focus:outline-none" aria-label="Avatar de Kenia Dev. Haz clic para ganar 50 puntos de experiencia.">
+                <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-purple-600 via-indigo-500 to-amber-400 p-0.5 shadow-lg group-hover:scale-105 transition">
+                  <div class="w-full h-full bg-slate-900 rounded-[14px] overflow-hidden flex items-center justify-center">
+                    <i data-lucide="wand-2" class="w-7 h-7 text-purple-300" aria-hidden="true"></i>
+                  </div>
+                </div>
+                <span id="userLevelBadge" class="absolute -bottom-1 -right-1 bg-amber-500 text-slate-950 text-[10px] font-extrabold px-1.5 py-0.5 rounded-md border border-amber-300 shadow">
+                  Nv. 5
+                </span>
+              </button>
+
+              <div>
+                <div class="flex items-center gap-1.5">
+                  <h2 id="profile-heading" class="font-heading font-bold text-base text-slate-100 wf-text-dark">Kenia Dev</h2>
+                  <i data-lucide="badge-check" class="w-4 h-4 text-indigo-400 fill-indigo-400/20" aria-label="Perfil verificado"></i>
+                </div>
+                <p class="text-xs text-purple-300 font-medium wf-text-dark">Creadora & Lead Developer de StudyQuest</p>
+                <div class="flex items-center gap-1.5 mt-1">
+                  <span class="inline-flex items-center gap-1 text-[10px] bg-amber-500/10 text-amber-400 px-2 py-0.5 rounded-full border border-amber-500/30 font-semibold wf-badge">
+                    🔥 Racha: 7 Días
+                  </span>
+                  <span class="inline-flex items-center text-[10px] bg-indigo-950 text-indigo-300 px-2 py-0.5 rounded-full border border-indigo-800/50 wf-badge">
+                    🎓 EdTech
+                  </span>
+                </div>
+              </div>
+            </div>
+            
+            <button onclick="toggleMode()" class="p-1.5 rounded-lg bg-slate-800/80 hover:bg-slate-700 text-slate-400 hover:text-slate-200 border border-slate-700 transition" aria-label="Cambiar a modo Blueprint de alto contraste">
+              <i data-lucide="layers" class="w-4 h-4 text-amber-400" aria-hidden="true"></i>
+            </button>
+          </div>
+
+          <div class="space-y-1 pt-2 border-t border-slate-800/80" role="region" aria-label="Progreso de experiencia RPG">
+            <div class="flex justify-between text-[11px] font-medium text-slate-400 wf-text-dark">
+              <span>Experiencia (XP)</span>
+              <span id="xpText" class="text-amber-400 font-mono font-bold">320 / 500 XP</span>
+            </div>
+            <div class="w-full h-2.5 bg-slate-900 rounded-full overflow-hidden p-0.5 border border-slate-800"
+                 role="progressbar" 
+                 id="xpProgressBar"
+                 aria-valuenow="320" 
+                 aria-valuemin="0" 
+                 aria-valuemax="500" 
+                 aria-label="Puntos de experiencia acumulados">
+              <div id="xpBar" class="h-full bg-gradient-to-r from-purple-500 via-indigo-500 to-amber-400 rounded-full xp-bar-fill shadow-sm" style="width: 64%;"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2. SECCIÓN: MISIONES PRINCIPALES / ENLACES DIRECTOS -->
+        <section class="space-y-2" aria-labelledby="links-heading">
+          <div class="flex items-center justify-between px-1">
+            <h2 id="links-heading" class="text-xs font-bold uppercase tracking-wider text-slate-400 flex items-center gap-1.5 wf-text-dark">
+              <i data-lucide="target" class="w-3.5 h-3.5 text-purple-400" aria-hidden="true"></i>
+              Misiones Principales (Enlaces Directos)
+            </h2>
+            <span class="text-[10px] bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-1.5 py-0.5 rounded font-mono">1 Clic</span>
+          </div>
+
+          <!-- Enlace 1 -->
+          <a href="https://studyquest.app/demo" onclick="clickAction('Probar App StudyQuest')" class="rpg-card-gold rounded-xl p-3 flex items-center justify-between group transition hover:scale-[1.01] active:scale-[0.99] block" aria-label="Probar StudyQuest App - Demo interactiva de organizador de tareas RPG">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 group-hover:bg-amber-500 group-hover:text-slate-950 transition" aria-hidden="true">
+                <i data-lucide="gamepad-2" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <div class="flex items-center gap-1.5">
+                  <span class="font-bold text-sm text-amber-200 group-hover:text-amber-300 wf-text-dark">Probar StudyQuest App</span>
+                  <span class="bg-amber-500/20 text-amber-300 text-[9px] font-extrabold px-1.5 py-0.2 rounded border border-amber-500/30">DEMO</span>
+                </div>
+                <p class="text-xs text-slate-400 wf-text-dark">Organizador de materias y tareas con rol fantasy</p>
+              </div>
+            </div>
+            <i data-lucide="chevron-right" class="w-5 h-5 text-amber-400/70 group-hover:translate-x-1 transition" aria-hidden="true"></i>
+          </a>
+
+          <!-- Enlace 2 -->
+          <a href="#mentorias" onclick="clickAction('Mentoría Dev & UI/UX')" class="rpg-card rounded-xl p-3 flex items-center justify-between group transition hover:scale-[1.01] active:scale-[0.99] block" aria-label="Mentoría Dev y UI/UX - Reserva de sesión presencial o virtual">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-lg bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400 group-hover:bg-purple-500 group-hover:text-white transition" aria-hidden="true">
+                <i data-lucide="code-2" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <div class="flex items-center gap-1.5">
+                  <span class="font-bold text-sm text-slate-100 group-hover:text-purple-300 wf-text-dark">Mentoría Dev & UI/UX</span>
+                  <span class="bg-purple-500/20 text-purple-300 text-[9px] font-extrabold px-1.5 py-0.2 rounded border border-purple-500/30">SERVICIO</span>
+                </div>
+                <p class="text-xs text-slate-400 wf-text-dark">Reserva sesión para revisión de portafolio o código</p>
+              </div>
+            </div>
+            <i data-lucide="chevron-right" class="w-5 h-5 text-slate-500 group-hover:translate-x-1 transition" aria-hidden="true"></i>
+          </a>
+
+          <!-- Enlace 3 -->
+          <a href="#plantillas" onclick="clickAction('Plantillas & Web Kits')" class="rpg-card rounded-xl p-3 flex items-center justify-between group transition hover:scale-[1.01] active:scale-[0.99] block" aria-label="Plantillas y Web Kits de Notion y UI Tailwind">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-lg bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-indigo-400 group-hover:bg-indigo-500 group-hover:text-white transition" aria-hidden="true">
+                <i data-lucide="box" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <div class="flex items-center gap-1.5">
+                  <span class="font-bold text-sm text-slate-100 group-hover:text-indigo-300 wf-text-dark">Plantillas & Web Kits</span>
+                </div>
+                <p class="text-xs text-slate-400 wf-text-dark">Kits de Notion y componentes UI para estudiar</p>
+              </div>
+            </div>
+            <i data-lucide="chevron-right" class="w-5 h-5 text-slate-500 group-hover:translate-x-1 transition" aria-hidden="true"></i>
+          </a>
+
+          <!-- Enlace 4 -->
+          <a href="https://discord.gg/example" target="_blank" rel="noopener noreferrer" onclick="clickAction('Comunidad de Estudio (Discord)')" class="rpg-card rounded-xl p-3 flex items-center justify-between group transition hover:scale-[1.01] active:scale-[0.99] block" aria-label="Gremio de Estudio en Discord, enlace a servidor gratuito">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 group-hover:bg-emerald-500 group-hover:text-slate-950 transition" aria-hidden="true">
+                <i data-lucide="users" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <div class="flex items-center gap-1.5">
+                  <span class="font-bold text-sm text-slate-100 group-hover:text-emerald-300 wf-text-dark">Gremio de Estudio (Discord)</span>
+                  <span class="bg-emerald-500/20 text-emerald-300 text-[9px] font-extrabold px-1.5 py-0.2 rounded border border-emerald-500/30">GRATIS</span>
+                </div>
+                <p class="text-xs text-slate-400 wf-text-dark">Comunidad activa de desarrolladores y estudiantes</p>
+              </div>
+            </div>
+            <i data-lucide="chevron-right" class="w-5 h-5 text-slate-500 group-hover:translate-x-1 transition" aria-hidden="true"></i>
+          </a>
+        </section>
+
+        <!-- 3. SECCIÓN: PROYECTO PRINCIPAL STUDYQUEST -->
+        <section class="rpg-card rounded-2xl p-4 space-y-3" aria-labelledby="project-heading">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <div class="w-2.5 h-2.5 rounded-full bg-indigo-500 animate-pulse" aria-hidden="true"></div>
+              <h2 id="project-heading" class="font-heading font-bold text-sm text-slate-100 wf-text-dark">Regiones de Estudio (Mapa)</h2>
+            </div>
+            <button class="text-[11px] text-purple-400 font-medium hover:underline focus:outline-none" onclick="openModal('questDetails')" aria-label="Ver detalles de misiones y regiones">
+              Ver Detalles &rarr;
+            </button>
+          </div>
+
+          <p class="text-xs text-slate-300 leading-relaxed wf-text-dark">
+            "Cada materia es una región por explorar". Convierte tareas universitarias en misiones con XP y recompensas.
+          </p>
+
+          <div class="grid grid-cols-2 gap-2 pt-1">
+            <article class="bg-slate-900/80 border border-slate-800 rounded-xl p-2.5 flex items-center gap-2">
+              <div class="w-7 h-7 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xs font-bold" aria-hidden="true">
+                <i data-lucide="tree-pine" class="w-3.5 h-3.5"></i>
+              </div>
+              <div>
+                <h3 class="text-[11px] font-bold text-slate-200 wf-text-dark">Bosque Ciencias</h3>
+                <p class="text-[10px] text-emerald-400 font-mono">80% completado</p>
+              </div>
+            </article>
+
+            <article class="bg-slate-900/80 border border-slate-800 rounded-xl p-2.5 flex items-center gap-2">
+              <div class="w-7 h-7 rounded-lg bg-indigo-500/20 text-indigo-400 flex items-center justify-center text-xs font-bold" aria-hidden="true">
+                <i data-lucide="code" class="w-3.5 h-3.5"></i>
+              </div>
+              <div>
+                <h3 class="text-[11px] font-bold text-slate-200 wf-text-dark">Fortaleza Código</h3>
+                <p class="text-[10px] text-indigo-400 font-mono">60% completado</p>
+              </div>
+            </article>
+          </div>
+
+          <button onclick="openModal('techStack')" class="w-full py-2 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white text-xs font-bold rounded-xl shadow-lg flex items-center justify-center gap-2 transition" aria-haspopup="dialog">
+            <i data-lucide="cpu" class="w-4 h-4" aria-hidden="true"></i>
+            <span>Ver Architecture & Tech Stack</span>
+          </button>
+        </section>
+
+        <!-- 4. SECCIÓN: SERVICIOS PROFESIONALES Y MARCAS -->
+        <section class="space-y-2" aria-labelledby="services-heading">
+          <h2 id="services-heading" class="text-xs font-bold uppercase tracking-wider text-slate-400 flex items-center gap-1.5 px-1 wf-text-dark">
+            <i data-lucide="briefcase" class="w-3.5 h-3.5 text-indigo-400" aria-hidden="true"></i>
+            Servicios Profesionales & Marcas
+          </h2>
+
+          <div class="grid grid-cols-2 gap-2">
+            <button onclick="openServiceDetail('UI/UX Gamificado', 'Diseño de dashboards e interfaces interactivas para plataformas educativas y SaaS con dinámicas de recompensa.')" class="text-left rpg-card rounded-xl p-3 hover:border-indigo-500/50 transition focus:outline-none" aria-label="Consultar servicio de UI/UX Gamificado">
+              <div class="w-8 h-8 rounded-lg bg-indigo-500/10 text-indigo-400 flex items-center justify-center mb-2" aria-hidden="true">
+                <i data-lucide="layout" class="w-4 h-4"></i>
+              </div>
+              <h3 class="font-bold text-xs text-slate-200 mb-1 wf-text-dark">UI/UX Gamificado</h3>
+              <p class="text-[11px] text-slate-400 leading-tight line-clamp-2 wf-text-dark">Dashboards e interfaces RPG.</p>
+              <span class="text-[10px] text-indigo-400 font-bold mt-2 inline-block">Consultar &rarr;</span>
+            </button>
+
+            <button onclick="openServiceDetail('Sponsorships Tech', 'Integración de tu software EdTech o herramienta dev en contenido audiovisual de alto impacto.')" class="text-left rpg-card rounded-xl p-3 hover:border-purple-500/50 transition focus:outline-none" aria-label="Ver Media Kit para Sponsorships Tech">
+              <div class="w-8 h-8 rounded-lg bg-purple-500/10 text-purple-400 flex items-center justify-center mb-2" aria-hidden="true">
+                <i data-lucide="video" class="w-4 h-4"></i>
+              </div>
+              <h3 class="font-bold text-xs text-slate-200 mb-1 wf-text-dark">Creadora Tech</h3>
+              <p class="text-[11px] text-slate-400 leading-tight line-clamp-2 wf-text-dark">Sponsorships y contenido EdTech.</p>
+              <span class="text-[10px] text-purple-400 font-bold mt-2 inline-block">Media Kit &rarr;</span>
+            </button>
+          </div>
+        </section>
+
+        <!-- 5. SECCIÓN: REDES SOCIALES -->
+        <footer class="rpg-card rounded-2xl p-4 text-center space-y-3" role="contentinfo">
+          <p class="text-xs text-slate-300 italic wf-text-dark">
+            "Pequeños esfuerzos hoy, grandes logros mañana." ✨
+          </p>
+          <div class="flex items-center justify-center gap-3 text-slate-400">
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="Perfil de GitHub de Kenia Dev" onclick="clickAction('GitHub')" class="w-9 h-9 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center hover:text-white hover:border-purple-500 transition">
+              <i data-lucide="github" class="w-4 h-4" aria-hidden="true"></i>
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="Canal de YouTube de Kenia Dev" onclick="clickAction('YouTube')" class="w-9 h-9 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center hover:text-white hover:border-purple-500 transition">
+              <i data-lucide="youtube" class="w-4 h-4" aria-hidden="true"></i>
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Perfil de Instagram de Kenia Dev" onclick="clickAction('Instagram')" class="w-9 h-9 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center hover:text-white hover:border-purple-500 transition">
+              <i data-lucide="instagram" class="w-4 h-4" aria-hidden="true"></i>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="Perfil de LinkedIn de Kenia Dev" onclick="clickAction('LinkedIn')" class="w-9 h-9 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center hover:text-white hover:border-purple-500 transition">
+              <i data-lucide="linkedin" class="w-4 h-4" aria-hidden="true"></i>
+            </a>
+          </div>
+        </footer>
+
+      </div>
+
+      <!-- BARRA DE NAVEGACIÓN INFERIOR MÓVIL ACCESIBLE -->
+      <nav class="absolute bottom-0 left-0 right-0 bg-slate-950/95 border-t border-slate-800/80 backdrop-blur-lg px-3 py-2 flex items-center justify-around z-30" aria-label="Navegación principal del dispositivo">
+        <button onclick="setActiveNav(this)" class="nav-btn flex flex-col items-center gap-1 text-xs text-indigo-400 font-medium focus:outline-none" aria-label="Inicio">
+          <i data-lucide="home" class="w-5 h-5" aria-hidden="true"></i>
+          <span class="text-[10px]">Inicio</span>
+        </button>
+        <button onclick="setActiveNav(this); openModal('questDetails')" class="nav-btn flex flex-col items-center gap-1 text-xs text-slate-400 hover:text-slate-200 font-medium focus:outline-none" aria-label="Sección Misiones">
+          <i data-lucide="swords" class="w-5 h-5" aria-hidden="true"></i>
+          <span class="text-[10px]">Misiones</span>
+        </button>
+        <button onclick="setActiveNav(this); openModal('techStack')" class="nav-btn flex flex-col items-center gap-1 text-xs text-slate-400 hover:text-slate-200 font-medium focus:outline-none" aria-label="Sección Servicios">
+          <i data-lucide="briefcase" class="w-5 h-5" aria-hidden="true"></i>
+          <span class="text-[10px]">Servicios</span>
+        </button>
+      </nav>
+    </main>
+  </div>
+
+  <!-- INSPECTOR DE CÓDIGO -->
+  <div id="codeContainer" class="w-full max-w-xl hidden space-y-4 transition-all duration-300" role="region" aria-label="Visor de código fuente">
+    <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 shadow-2xl space-y-4">
+      <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+        <div>
+          <h2 class="font-bold text-slate-100 text-sm flex items-center gap-2">
+            <i data-lucide="file-code-2" class="w-4 h-4 text-amber-400" aria-hidden="true"></i>
+            Código Fuente Separado en 3 Archivos
+          </h2>
+          <p class="text-xs text-slate-400">Archivos modulares para tu desarrollo local</p>
+        </div>
+        <button onclick="switchMainView('preview')" class="text-xs text-indigo-400 hover:underline">Volver a Vista Previa</button>
+      </div>
+
+      <div class="flex border-b border-slate-800 gap-2" role="tablist">
+        <button id="tabHtml" role="tab" aria-selected="true" onclick="switchCodeTab('html')" class="px-3 py-1.5 text-xs font-bold text-indigo-400 border-b-2 border-indigo-500 transition">
+          index.html
+        </button>
+        <button id="tabCss" role="tab" aria-selected="false" onclick="switchCodeTab('css')" class="px-3 py-1.5 text-xs font-bold text-slate-400 border-b-2 border-transparent hover:text-slate-200 transition">
+          styles.css
+        </button>
+        <button id="tabJs" role="tab" aria-selected="false" onclick="switchCodeTab('js')" class="px-3 py-1.5 text-xs font-bold text-slate-400 border-b-2 border-transparent hover:text-slate-200 transition">
+          script.js
+        </button>
+      </div>
+
+      <div class="relative">
+        <div class="absolute top-3 right-3 flex items-center gap-2 z-10">
+          <button onclick="downloadCurrentFile()" class="bg-indigo-600 hover:bg-indigo-500 text-white text-xs px-2.5 py-1 rounded-lg flex items-center gap-1 shadow transition">
+            <i data-lucide="download" class="w-3.5 h-3.5" aria-hidden="true"></i>
+            <span>Descargar</span>
+          </button>
+          <button onclick="copyCurrentCode()" class="bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs px-2.5 py-1 rounded-lg border border-slate-700 flex items-center gap-1 transition">
+            <i data-lucide="copy" class="w-3.5 h-3.5" aria-hidden="true"></i>
+            <span id="copyBtnText">Copiar</span>
+          </button>
+        </div>
+
+        <pre class="bg-slate-950 p-4 pt-12 sm:pt-4 rounded-xl border border-slate-800/80 text-[11px] font-mono text-slate-300 overflow-x-auto max-h-[480px] leading-relaxed"><code id="codeBlock"></code></pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- SISTEMA DE MODALES CON ATRIBUTOS ARIA ACCESIBLES -->
+  <div id="modalOverlay" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 hidden flex items-end sm:items-center justify-center p-0 sm:p-4" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="bg-quest-card border border-slate-800 w-full max-w-md rounded-t-3xl sm:rounded-2xl p-5 shadow-2xl relative space-y-4">
+      <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white p-1 rounded-lg" aria-label="Cerrar ventana modal">
+        <i data-lucide="x" class="w-5 h-5" aria-hidden="true"></i>
+      </button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <!-- REGIÓN ACCESIBLE ARIA-LIVE PARA NOTIFICACIONES -->
+  <div id="toast" role="status" aria-live="polite" class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-indigo-600 text-white text-xs font-semibold px-4 py-2.5 rounded-full shadow-2xl border border-indigo-400/30 flex items-center gap-2 transform translate-y-20 opacity-0 transition-all duration-300 z-50 pointer-events-none">
+    <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-300" aria-hidden="true"></i>
+    <span id="toastMsg">Acción registrada</span>
+  </div>
+
+  <!-- Archivo JavaScript Modular -->
+  <script src="script.js"></script>
+</body>
+</html>
