@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080f2d">
+  <meta name="description" content="StudyQuest: tu esfuerzo, tu aventura. Organiza tus misiones académicas y descubre tu progreso.">
+  <title>StudyQuest — Tu esfuerzo, tu aventura</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#inicio" aria-label="StudyQuest, inicio" data-view="inicio">
+        <span class="brand-mark">✦</span>
+        <span class="brand-copy"><strong>StudyQuest</strong><small>Tu esfuerzo, tu aventura</small></span>
+      </a>
+      <nav class="side-nav" aria-label="Navegación principal">
+        <button class="nav-link active" data-view="inicio"><span class="nav-icon">⌂</span><span>Inicio</span></button>
+        <button class="nav-link" data-view="misiones"><span class="nav-icon">⚔</span><span>Misiones</span></button>
+        <button class="nav-link" data-view="materias"><span class="nav-icon">▤</span><span>Materias</span></button>
+        <button class="nav-link" data-view="personaje"><span class="nav-icon">♙</span><span>Mi personaje</span></button>
+        <button class="nav-link" data-view="logros"><span class="nav-icon">♜</span><span>Logros</span></button>
+        <button class="nav-link" data-view="mapa"><span class="nav-icon">◈</span><span>Mapa</span></button>
+        <button class="nav-link" data-view="inventario"><span class="nav-icon">♧</span><span>Inventario</span></button>
+        <button class="nav-link" data-view="ajustes"><span class="nav-icon">⚙</span><span>Ajustes</span></button>
+      </nav>
+      <div class="sidebar-quote">
+        <span class="quote-star">✦</span>
+        <p>¡A vencer al demonio de la procastinación!</p>
+        <span class="quote-cat">🐈‍⬛</span>
+      </div>
+      <div class="sidebar-footer">STUDYQUEST <span>✧</span> v0.1</div>
+    </aside>
+
+    <div class="app-main">
+      <header class="topbar">
+        <button class="mobile-menu icon-button" id="mobileMenu" aria-label="Abrir menú">☰</button>
+        <label class="search-box">
+          <span>⌕</span>
+          <input id="globalSearch" type="search" placeholder="Buscar misiones, materias..." autocomplete="off">
+          <kbd>⌘ K</kbd>
+        </label>
+        <div class="top-actions">
+          <button class="icon-button notification-button" id="notificationButton" aria-label="Notificaciones">♧<i></i></button>
+          <div class="profile-menu-wrap">
+            <button class="profile-trigger" id="profileTrigger" aria-expanded="false">
+              <span class="mini-avatar">☾</span><span id="topUserName">Kenia</span><span class="chevron">⌄</span>
+            </button>
+            <div class="profile-dropdown" id="profileDropdown" hidden>
+              <button data-view="personaje">Ver personaje</button>
+              <button data-view="ajustes">Configuración</button>
+              <button id="resetDemo">Restablecer demo</button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="page-content" id="pageContent" tabindex="-1"></main>
+      <footer class="app-footer">Hecho para aprender, crecer y explorar <span>✦</span> StudyQuest</footer>
+    </div>
+  </div>
+
+  <div class="toast-region" id="toastRegion" aria-live="polite" aria-atomic="true"></div>
+  <div class="modal-backdrop" id="modalBackdrop" hidden>
+    <section class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-head"><div><p class="eyebrow">NUEVA AVENTURA</p><h2 id="modalTitle">Crear misión</h2></div><button class="icon-button modal-close" id="modalClose" aria-label="Cerrar">×</button></div>
+      <form id="missionForm" class="mission-form">
+        <label>Nombre de la misión<input name="title" required maxlength="70" placeholder="Ej. Resolver ejercicios de álgebra"></label>
+        <label>Descripción<textarea name="description" rows="3" maxlength="180" placeholder="¿Qué necesitas completar?"></textarea></label>
+        <div class="form-row">
+          <label>Materia<select name="subject" required></select></label>
+          <label>Recompensa XP<select name="xp"><option value="30">30 XP</option><option value="50">50 XP</option><option value="70" selected>70 XP</option><option value="100">100 XP</option><option value="150">150 XP</option></select></label>
+        </div>
+        <label>Fecha límite<input type="date" name="dueDate"></label>
+        <div class="modal-actions"><button type="button" class="button button-ghost" id="cancelMission">Cancelar</button><button class="button button-primary" type="submit">✦ Crear misión</button></div>
+      </form>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
